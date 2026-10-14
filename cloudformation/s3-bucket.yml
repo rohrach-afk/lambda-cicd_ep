@@ -10,16 +10,20 @@ Parameters:
       - staging
       - production
 
+# S3 Bucket 
+
 Resources:
   MyS3Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: !Sub '${AWS::StackName}-${Environment}-bucket'
-    Tags:
-      - Key: Environment
-        Value: !Ref Environment
+      BucketName: !Sub '${AWS::StackName}-${Environment}-bucket-ep'
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Environment
+          Value: GithubActions
   
-  Outputs:
-    BucketName:
-      Description: 'Name of created S3 Bucket'
-      Value: !Ref MyS3Bucket
+Outputs:
+  BucketName:
+    Description: 'Name of created S3 Bucket'
+    Value: !Ref MyS3Bucket
