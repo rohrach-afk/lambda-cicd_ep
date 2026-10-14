@@ -10,7 +10,7 @@ on:
 
 jobs: 
     deploy-lambda: # Sets the name for our job
-        runs-on: unbuntu-latest # Sets or specifies the runner
+        runs-on: ubuntu-latest # Sets or specifies the runner
         steps:
             - uses: actions/checkout@v2
             - name: Set Up Python # Setups our python
