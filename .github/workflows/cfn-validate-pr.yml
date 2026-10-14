@@ -22,7 +22,7 @@ jobs:
                 aws-region: us-east-2
             - name: Validate Cloudformation Template
               run: |
-                aws cloudformation validate-template --template-body file://cloudformation/s3-bucket-yml
+                aws cloudformation validate-template --template-body file://cloudformation/s3-bucket.yml
             - name: Deploy our stack
               run: |
                 stack_name="pr-test-stack-${{github.event.pull_request.number}}"
